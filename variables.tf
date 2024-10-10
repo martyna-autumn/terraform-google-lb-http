@@ -182,6 +182,14 @@ variable "backends" {
       success_rate_request_volume = optional(number)
       success_rate_stdev_factor   = optional(number)
     }))
+    security_settings = optional(object({
+      aws_v4_authentication = optional(object({
+        access_key_id         = optional(string)
+        access_key            = optional(string)
+        access_key_version    = optional(string)
+        origin_region         = optional(string)
+      }))
+    }))
   }))
 }
 
