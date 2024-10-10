@@ -325,9 +325,9 @@ resource "google_compute_backend_service" "default" {
       dynamic "aws_v4_authentication" {
         for_each = each.value.security_settings.aws_v4_authentication != null ? [1] : []
         content {
-          access_key_id         = each.value.security_settings.aws_v4_authentication.access_key_id
-          access_key            = each.value.security_settings.aws_v4_authentication.access_key
-          origin_region         = each.value.security_settings.aws_v4_authentication.origin_region
+          access_key_id = each.value.security_settings.aws_v4_authentication.access_key_id
+          access_key    = each.value.security_settings.aws_v4_authentication.access_key
+          origin_region = each.value.security_settings.aws_v4_authentication.origin_region
         }
       }
     }
